@@ -7,7 +7,7 @@ import net.lightbody.bmp.filters.ResponseFilter;
 import net.lightbody.bmp.util.HttpMessageContents;
 import net.lightbody.bmp.util.HttpMessageInfo;
 
-public class MyResponseFilter implements ResponseFilter {
+public class ProxyResponseFilter implements ResponseFilter {
 			
 	public void filterResponse(HttpResponse response, HttpMessageContents contents, HttpMessageInfo info) {
 		String messageContents = contents.getTextContents();

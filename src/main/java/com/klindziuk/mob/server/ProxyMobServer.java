@@ -19,9 +19,9 @@ public final class ProxyMobServer {
 		proxy = new BrowserMobProxyServer();
 		proxy.start(8787);
 		proxy.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
-		// got some troubles here
-//		proxy.addRequestFilter(new MyRequestFilter());
-		proxy.addResponseFilter(new MyResponseFilter());
+		// got some troubles here, need to enable ssl certificate to proxy.
+	//	proxy.addRequestFilter(new MyRequestFilter());
+		proxy.addResponseFilter(new ProxyResponseFilter());
 	}
 
 	public BrowserMobProxy getBrowserMobProxy() {

@@ -32,8 +32,10 @@ public enum BrowserDriver {
 	public WebDriver selectDriver() {
 		switch (index) {
 		case 1: {
-			Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+			Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
+			seleniumProxy.setHttpProxy("127.0.0.1:" + proxy.getPort());
+			seleniumProxy.setSslProxy("127.0.0.1:" + proxy.getPort());
 			capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-notifications");

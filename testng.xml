@@ -3,9 +3,20 @@
 <suite name="Suite" parallel="false" >
 
  <test name="com.klindziuk.mob.test">
+ <parameter name="browserName" value="chrome" />
+ 
+ <parameter name="preferenceHost" value="network.proxy.http" /> <!--For FF only -->
+ <parameter name="hostNumber" value="127.0.0.1" /> <!-- For FF only  -->
+ <parameter name="preferencePort" value="network.proxy.http_port" /> <!--For FF only  -->
+ <parameter name="binaryPath" value="C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" /> <!--For FF only -->
+ 
+<parameter name="key" value="webdriver.chrome.driver" />
+<parameter name="value" value="C:/Users/Pavel_Klindziuk/Program_Files/ChromeDriver/chromedriver.exe" /> 
+<!--  <parameter name="key" value="webdriver.gecko.driver" />
+ <parameter name="value" value="C:/Users/Pavel_Klindziuk/Program_Files/GeckoDriver18/geckodriver.exe" /> -->
      <classes>
            <class name="com.klindziuk.mob.test.RewriteContentTest" />
            <class name="com.klindziuk.mob.test.RewriteHTTProtocolTest" />
-            </classes>    
+           </classes>    
     </test> 
 </suite> 

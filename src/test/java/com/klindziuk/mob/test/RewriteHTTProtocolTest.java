@@ -14,10 +14,14 @@ public class RewriteHTTProtocolTest {
 	
   @Test(dependsOnGroups={"RewriteContentTest.searchTestNGandRewriteToJuintInGoogle"})
   public void rewriteHttpProtocolTest() {
+	    if( null == HarParser.getResponses()){
+	    	Assert.fail();
+	    }
 	 	for(ResponseLog log : HarParser.getResponses()) {
 			Assert.assertNotEquals(log.getHttpVersion(), httpVersion);
 			//sometimes we get "unknown" instead of "HTTP/1.0"
 			softAssert.assertEquals(log.getHttpVersion(), rewritedHttpVersion);
-		}
+	}
+	 	softAssert.assertAll();
   }
 }

@@ -2,7 +2,6 @@ package com.klindziuk.mob.log.model;
 
 import java.util.List;
 
-import net.lightbody.bmp.core.har.HarCookie;
 import net.lightbody.bmp.core.har.HarNameValuePair;
 
 public class RequestLog extends BaseLog {
@@ -10,12 +9,8 @@ public class RequestLog extends BaseLog {
 	private String url;
 	private List<HarNameValuePair> queries;
 
-	public RequestLog(long bodySize, long headersSize, String comment, String httpVersion, String method, String url,
-			List<HarCookie> cookies, List<HarNameValuePair> headers, List<HarNameValuePair> queries) {
-		super(bodySize, headersSize, comment, httpVersion, cookies, headers);
-		this.method = method;
-		this.url = url;
-		this.queries = queries;
+	public RequestLog() {
+		
 	}
 
 	public List<HarNameValuePair> getQueries() {

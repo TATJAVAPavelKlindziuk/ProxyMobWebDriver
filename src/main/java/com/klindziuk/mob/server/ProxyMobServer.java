@@ -30,6 +30,8 @@ public final class ProxyMobServer {
 	 // for HTTPS requests BMP cannot modify the host and port, since it is always reusing a persistent connection.
 	 //	proxy.rewriteUrl(ANY_URL_PATTERN, GOOGLE_URL);
 		proxy.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
+		
+		proxy.addRequestFilter(new ProxyRequestFilter());
 		proxy.addResponseFilter(new ProxyResponseFilter());
 	}
 

@@ -1,24 +1,12 @@
 package com.klindziuk.mob.log.model;
 
-import java.util.List;
-
-import net.lightbody.bmp.core.har.HarCookie;
-import net.lightbody.bmp.core.har.HarNameValuePair;
-
 public class ResponseLog extends BaseLog {
 	private int status;
 	private String statusText;
 	private String content;
 	private String redirectedUrl;
 
-	public ResponseLog(long bodySize, long headersSize, String comment, String httpVersion, List<HarCookie> cookies,
-			List<HarNameValuePair> headers, int status, String statusText, String content, String redirectedUrl) {
-		super(bodySize, headersSize, comment, httpVersion, cookies, headers);
-		this.status = status;
-		this.statusText = statusText;
-		this.content = content;
-		this.redirectedUrl = redirectedUrl;
-	}
+	public ResponseLog() {	}
 
 	public int getStatus() {
 		return status;

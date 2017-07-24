@@ -14,16 +14,7 @@ public class BaseLog {
 	protected List<HarCookie> cookies;
 	protected List<HarNameValuePair> headers;
 	
-	public BaseLog(long bodySize, long headersSize, String comment, String httpVersion,
-			List<HarCookie> cookies, List<HarNameValuePair> headers) {
-		
-		this.bodySize = bodySize;
-		this.headersSize = headersSize;
-		this.comment = comment;
-		this.httpVersion = httpVersion;
-		this.cookies = cookies;
-		this.headers = headers;
-	}
+	public BaseLog() {	}
 	
 	public long getBodySize() {
 		return bodySize;

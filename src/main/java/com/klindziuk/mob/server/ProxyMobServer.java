@@ -11,7 +11,7 @@ import net.lightbody.bmp.proxy.CaptureType;
 
 public final class ProxyMobServer {
 	private static final String ANY_URL_PATTERN = "\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
-	private static final String GOOGLE_URL  = "https://google.com:443";
+	private static final String GOOGLE_URL  = "http://google.com";
 	private static ProxyMobServer instance;
 	private BrowserMobProxy proxy;
 	

@@ -14,7 +14,7 @@ import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarNameValuePair;
 
 public final class HarParser {
-	final static InternalLogger logger = InternalLoggerFactory.getInstance("HarParser");
+	private final static InternalLogger logger = InternalLoggerFactory.getInstance("HarParser");
 	private static final String EMPTY_HAR_MESSAGE = "Har is empty, cannot perform logging.";
 	private static List<RequestLog> requests;
 	private static List<ResponseLog> responses;
@@ -31,8 +31,9 @@ public final class HarParser {
 	}
 
 	public static void parseRequest(Har har) {
-		if(null == har){
+		if(0 == har.getLog().getEntries().size()){
 			logger.error(EMPTY_HAR_MESSAGE);
+			return;
 		}
 		requests = new ArrayList<>();
 		for (HarEntry entry : har.getLog().getEntries()) {
@@ -52,8 +53,9 @@ public final class HarParser {
 	}
 
 	public static void parseResponse(Har har) {
-		if(null == har){
+		if(0 == har.getLog().getEntries().size()){
 			logger.error(EMPTY_HAR_MESSAGE);
+			return;
 		}
 		responses =  new ArrayList<>();
 		for (HarEntry entry : har.getLog().getEntries()) {

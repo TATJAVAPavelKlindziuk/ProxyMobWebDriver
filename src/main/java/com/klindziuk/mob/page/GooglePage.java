@@ -30,7 +30,7 @@ public class GooglePage {
 	}
 
 	public void searchFor(String searchQuery) {
-		(new WebDriverWait(driver, 100)).until(new ExpectedCondition<Boolean>() {
+		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
 				return d.getTitle().toLowerCase().startsWith(TITLE.toLowerCase());
 			}

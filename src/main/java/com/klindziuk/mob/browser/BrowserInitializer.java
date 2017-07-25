@@ -37,7 +37,7 @@ public class BrowserInitializer {
 		capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
-		options.addArguments("--proxy-server=localhost:" + proxy.getPort());
+		options.addArguments("--proxy-server=localhost:" + String.valueOf(proxy.getPort()));
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 		System.setProperty(key,value);

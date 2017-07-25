@@ -10,7 +10,7 @@ import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.client.ClientUtil;
 
 public class BrowserInitializer {
-	private static final String NULL_PROXY_MESSAGE = "Cannot initialize seleniumProxy with null BrowseMobProxy";
+	private static final String NULL_PROXY_MESSAGE = "Cannot initialize seleniumProxy without instance of BrowseMobProxy";
 	private String hostNumber;
 	private String preferenceHost;
 	private String preferencePort;
@@ -59,5 +59,4 @@ public class BrowserInitializer {
 		System.setProperty(key,value);
 		return capabilities;
 	}
-
 }

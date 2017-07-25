@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public final class BrowserDriver {
 	private final static InternalLogger logger = InternalLoggerFactory.getInstance("BrowserDriver");
-	private static final String INVALID_BROWSER_NAME_MESSAGE = "Cannot initialize WebDriver without valid value  of browser name.";
+	private static final String INVALID_BROWSER_NAME_MESSAGE = "Cannot initialize WebDriver with current browser name: ";
 	private static final String CHROME = "chrome";
 	private static final String FIREFOX = "firefox";
 	private BrowserMobProxy proxy;
@@ -27,7 +27,7 @@ public final class BrowserDriver {
 
 	public WebDriver selectDriver(String browserName) {
 		if (null == browserName || browserName.isEmpty()) {
-			logger.error(INVALID_BROWSER_NAME_MESSAGE);
+			logger.error(INVALID_BROWSER_NAME_MESSAGE + browserName);
 			return null;
 		}
 		switch (browserName) {
@@ -48,7 +48,7 @@ public final class BrowserDriver {
 			return new FirefoxDriver(capabilities);
 		}
 		default: {
-			logger.error(INVALID_BROWSER_NAME_MESSAGE);
+			logger.error(INVALID_BROWSER_NAME_MESSAGE + browserName);
 			return null;
 		}
 		}

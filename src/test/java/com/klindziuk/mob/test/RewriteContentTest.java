@@ -8,7 +8,6 @@ import com.klindziuk.mob.test.listener.HarListener;
 @Listeners(HarListener.class)
 public class RewriteContentTest extends BaseTest {
 	
-
 	@Test(groups = { "RewriteContentTest.searchTestNGandRewriteToJuintInGoogle" })
 	public void searchTestNGandRewriteToJuintInGoogle() {
 		String searchKey = "TestNG";

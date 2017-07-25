@@ -41,7 +41,7 @@ public class GooglePage {
 
 	public String getSearchQueryText() {
 		(new WebDriverWait(driver, 10))
-				.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("gs_ok0")));
+				.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("resultStats")));
 		String result = searchBox.getAttribute("value");
 		return result;
 	}

@@ -15,7 +15,9 @@ public class RewriteContentTest extends BaseTest {
 		String rewritedSearchKey = "jUnit";
 		google.searchFor(searchKey);
 		String actual = google.getSearchQueryText();
+		System.out.println(actual);
 		softAssert.assertNotSame(actual, searchKey);
 		softAssert.assertEquals(actual, rewritedSearchKey);
+		softAssert.assertAll();
 	}
 }
